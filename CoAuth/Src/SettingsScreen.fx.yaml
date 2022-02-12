@@ -1,0 +1,81 @@
+SettingsScreen As screen:
+    Fill: =ColorValue(BackgroundColor)
+    LoadingSpinnerColor: =RGBA(12, 126, 44, 1)
+
+    Rectangle1_1 As rectangle:
+        BorderColor: =RGBA(135, 190, 82, 1)
+        DisplayMode: =DisplayMode.View
+        Fill: =ColorValue(MainColor)
+        Height: =768
+        Width: =31
+        ZIndex: =2
+
+    Toggle1 As toggleSwitch:
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Color: =ColorValue(TextColor)
+        FalseFill: =RGBA(128, 130, 133, 1)
+        FalseText: ="Dark"
+        HandleFill: =RGBA(255, 255, 255, 1)
+        OnCheck: |-
+            =Set(TextColor,TextColorLight);
+            Set(MainColor,MainColorLight);
+            Set(AltColor,AltColorLight);
+            Set(BackgroundColor,BackgroundColorLight);
+        OnUncheck: |-
+            =Set(TextColor,TextColorDark);
+            Set(MainColor,MainColorDark);
+            Set(AltColor,AltColorDark);
+            Set(BackgroundColor,BackgroundColorDark);
+        Size: =13
+        Tooltip: ="Toggle app contrast"
+        TrueFill: =ColorValue(MainColor)
+        TrueText: ="Light"
+        Width: =110
+        X: =193
+        Y: =122
+        ZIndex: =3
+
+    Label1 As label:
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Color: =ColorValue(TextColor)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Size: =13
+        Text: ="App contrast"
+        X: =60
+        Y: =116
+        ZIndex: =4
+
+    Icon2 As icon.BackArrow:
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Color: =ColorValue(MainColor)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(StartScreen,ScreenTransition.Cover)
+        Tooltip: ="Back to main screen"
+        X: =48
+        Y: =12
+        ZIndex: =5
+
+    Label4_1 As label:
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Color: =ColorValue(MainColor)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Lato Black'
+        Height: =52
+        Size: =30
+        Text: =Concatenate ("Welcome" ," ",User().FullName)
+        Width: =597
+        X: =136
+        Y: =18
+        ZIndex: =6
+
+    Image4 As image:
+        BorderColor: =RGBA(135, 190, 82, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Image: =User().Image
+        X: =1230
+        Y: =22
+        ZIndex: =7
+

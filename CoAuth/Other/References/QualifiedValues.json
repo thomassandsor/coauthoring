@@ -1,0 +1,47 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_acdc_pizzaproduct_forms",
+      "Namespace": "Pizza Products (Forms)",
+      "Values": {
+        "Information": "9a752172-bb32-4eb7-931b-cee09bacf3ad"
+      }
+    },
+    {
+      "Kind": "default.cds_acdc_pizzaorderproduct_forms",
+      "Namespace": "Pizza Order Products (Forms)",
+      "Values": {
+        "Information": "617eef98-ce03-491f-a389-88f88b3e3680"
+      }
+    },
+    {
+      "Kind": "default.cds_acdc_pizzaorder_forms",
+      "Namespace": "Pizza Orders (Forms)",
+      "Values": {
+        "Information": "58ceeee4-226e-4ce5-8580-aaadccafec3e",
+        "Main form": "c0d420fd-2bc0-412d-bb5e-f737c0d6d7f8"
+      }
+    },
+    {
+      "Kind": "default.cds_acdc_pizzafact_forms",
+      "Namespace": "Pizza Facts (Forms)",
+      "Values": {
+        "Information": "138dd2cc-b04e-43c4-9546-bda25ba4c2c5"
+      }
+    },
+    {
+      "Kind": "default.cds_acdc_pizzasuggestion_forms",
+      "Namespace": "Pizza Suggestions (Forms)",
+      "Values": {
+        "Information": "36372ff8-3bce-4a28-86d3-8d6df99dc7b8"
+      }
+    },
+    {
+      "Kind": "default.cds_acdc_pizzaorderfeedback_forms",
+      "Namespace": "Pizza Order Feedbacks (Forms)",
+      "Values": {
+        "Information": "6e4312a1-31be-4a8f-b168-f6915ff62fe6"
+      }
+    }
+  ]
+}

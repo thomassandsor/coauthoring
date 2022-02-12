@@ -1,0 +1,98 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "acdc_pizzafacts",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "acdc_pizzafact",
+    "MaxGetRowsCount": 500,
+    "Name": "Pizza Facts",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "acdc_fact": "Fact",
+      "acdc_name": "Name",
+      "acdc_pizzafact_AsyncOperations": "System Jobs",
+      "acdc_pizzafact_BulkDeleteFailures": "Bulk Delete Failures",
+      "acdc_pizzafact_DuplicateBaseRecord": "Duplicate Records (acdc_pizzafact_DuplicateBaseRecord)",
+      "acdc_pizzafact_DuplicateMatchingRecord": "Duplicate Records (acdc_pizzafact_DuplicateMatchingRecord)",
+      "acdc_pizzafact_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "acdc_pizzafact_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "acdc_pizzafact_ProcessSession": "Process Sessions",
+      "acdc_pizzafact_SyncErrors": "Sync Errors",
+      "acdc_pizzafactid": "Pizza Fact",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Pizza Facts",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Pizza Facts (Views)",
+    "Name": "_acdc_pizzafact_views",
+    "RelatedEntityName": "Pizza Facts",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "11d5433d-c298-4626-8b24-59c33035a3ba": "Pizza Fact Advanced Find View",
+      "370a7218-6f4b-41ce-8342-e0a504fd62a8": "Pizza Fact Associated View",
+      "8df38d72-d07b-41b7-9a0a-e63322fb5af8": "Active Pizza Facts",
+      "a77f5ecc-5b71-4ce5-b718-5bbb378418ba": "Inactive Pizza Facts",
+      "aa00f501-5dd4-4108-9c68-8e5dd425e530": "Pizza Fact Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Pizza Facts)",
+    "Name": "acdc_pizzafact_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Pizza Facts"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Pizza Facts",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Pizza Facts)",
+    "Name": "acdc_pizzafact_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Pizza Facts"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Pizza Facts",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "acdc_pizzaorderproducts",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "acdc_pizzaorderproduct",
+    "MaxGetRowsCount": 500,
+    "Name": "Pizza Order Products",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "acdc_OrderID": "Order ID",
+      "acdc_orderproductid": "OrderProductID",
+      "acdc_pizzaorderproduct_AsyncOperations": "System Jobs",
+      "acdc_pizzaorderproduct_BulkDeleteFailures": "Bulk Delete Failures",
+      "acdc_pizzaorderproduct_DuplicateBaseRecord": "Duplicate Records (acdc_pizzaorderproduct_DuplicateBaseRecord)",
+      "acdc_pizzaorderproduct_DuplicateMatchingRecord": "Duplicate Records (acdc_pizzaorderproduct_DuplicateMatchingRecord)",
+      "acdc_pizzaorderproduct_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "acdc_pizzaorderproduct_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "acdc_pizzaorderproduct_ProcessSession": "Process Sessions",
+      "acdc_pizzaorderproduct_SyncErrors": "Sync Errors",
+      "acdc_pizzaorderproductid": "Pizza Order Product",
+      "acdc_PizzaProduct": "Pizza Product",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Pizza Order Products",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Pizza Order Products (Views)",
+    "Name": "_acdc_pizzaorderproduct_views",
+    "RelatedEntityName": "Pizza Order Products",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2459e847-cb00-4d64-8e85-d1a6dc736326": "Active Pizza Order Products",
+      "4f3c4d26-e704-4391-8d59-69f475d05771": "Inactive Pizza Order Products",
+      "588ed9ca-414c-456d-aa0c-0108a5516626": "Pizza Order Product Lookup View",
+      "a6c5e45e-5a05-44d5-a872-5585a9715731": "Pizza Order Product Advanced Find View",
+      "f6de52df-b77e-42a2-ae3a-f71bd304fa37": "Pizza Order Product Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Pizza Order Products)",
+    "Name": "acdc_pizzaorderproduct_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Pizza Order Products"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Pizza Order Products",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Pizza Order Products)",
+    "Name": "acdc_pizzaorderproduct_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Pizza Order Products"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Pizza Order Products",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,101 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "acdc_pizzaorderfeedbacks",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "acdc_pizzaorderfeedback",
+    "MaxGetRowsCount": 500,
+    "Name": "Pizza Order Feedbacks",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "acdc_feedback": "Feedback",
+      "acdc_id": "ID",
+      "acdc_OrderID": "OrderID",
+      "acdc_pizzaorderfeedback_AsyncOperations": "System Jobs",
+      "acdc_pizzaorderfeedback_BulkDeleteFailures": "Bulk Delete Failures",
+      "acdc_pizzaorderfeedback_DuplicateBaseRecord": "Duplicate Records (acdc_pizzaorderfeedback_DuplicateBaseRecord)",
+      "acdc_pizzaorderfeedback_DuplicateMatchingRecord": "Duplicate Records (acdc_pizzaorderfeedback_DuplicateMatchingRecord)",
+      "acdc_pizzaorderfeedback_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "acdc_pizzaorderfeedback_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "acdc_pizzaorderfeedback_ProcessSession": "Process Sessions",
+      "acdc_pizzaorderfeedback_SyncErrors": "Sync Errors",
+      "acdc_pizzaorderfeedbackid": "Pizza Order Feedback",
+      "acdc_sentiment": "Sentiment",
+      "acdc_sentimentscore": "Sentiment Score",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Pizza Order Feedbacks",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Pizza Order Feedbacks (Views)",
+    "Name": "_acdc_pizzaorderfeedback_views",
+    "RelatedEntityName": "Pizza Order Feedbacks",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "403564f9-ad8e-48f7-8704-55bbe973c12a": "Inactive Pizza Order Feedbacks",
+      "406b906b-cc51-457c-ad7f-85e13d393506": "Pizza Order Feedback Associated View",
+      "64064eb4-3810-4a9a-9d8f-266d61c8d295": "Pizza Order Feedback Advanced Find View",
+      "7fc67004-9474-4a80-ac83-29aac0c19f66": "Active Pizza Order Feedbacks",
+      "821aa915-7822-42a8-a420-5b7f8798c99d": "Pizza Order Feedback Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Pizza Order Feedbacks)",
+    "Name": "acdc_pizzaorderfeedback_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Pizza Order Feedbacks"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Pizza Order Feedbacks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Pizza Order Feedbacks)",
+    "Name": "acdc_pizzaorderfeedback_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Pizza Order Feedbacks"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Pizza Order Feedbacks",
+    "Type": "OptionSetInfo"
+  }
+]
