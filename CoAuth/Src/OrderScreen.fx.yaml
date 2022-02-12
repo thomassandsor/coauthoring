@@ -1,0 +1,473 @@
+OrderScreen As screen:
+    Fill: =ColorValue(BackgroundColor)
+    LoadingSpinnerColor: =RGBA(12, 126, 44, 1)
+
+    Timer4 As timer:
+        Duration: =6000
+        Fill: =RGBA(12, 126, 44, 1)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(12, 126, 44, 1), -20%)
+        OnTimerEnd: |-
+            =Set(varTY, false);
+            Navigate(StartScreen, ScreenTransition.Fade);
+        Start: =varTY
+        Visible: =false
+        X: =60
+        Y: =60
+        ZIndex: =1
+
+    Rectangle2 As rectangle:
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Fill: =ColorValue(MainColor)
+        Height: =768
+        Width: =30
+        ZIndex: =3
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Height: =686
+        Items: ='Pizza Products'
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        Width: =779
+        X: =30
+        Y: =82
+        ZIndex: =5
+
+        Image3 As image:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =128
+            Image: =ThisItem.'Pizza Picture'
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title1 As label:
+            Color: =ColorValue(MainColor)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =ThisItem.Name
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image3.Width - 104
+            X: =Image3.X + Image3.Width + 24
+            Y: =44
+            ZIndex: =2
+
+        Subtitle1 As label:
+            Color: =ColorValue(TextColor)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =60
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.'Product Description'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =Title1.X
+            Y: =Title1.Y + Title1.Height + 4
+            ZIndex: =3
+
+        Separator1 As rectangle:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Fill: =RGBA(135, 190, 82, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    Label1_1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Color: =ColorValue(TextColor)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =196
+        Italic: =true
+        OnSelect: =Set(varOrderPopup, true);
+        Size: =56
+        Text: ="PLACE ORDER"
+        Width: =525
+        X: =839
+        Y: =62
+        ZIndex: =6
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =11
+
+        Rectangle3 As rectangle:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(231, 242, 220, 0.8)
+            Height: =768
+            Visible: =varOrderPopup
+            Width: =1365
+            ZIndex: =17
+
+        Rectangle4 As rectangle:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Fill: =RGBA(12, 126, 44, 1)
+            Height: =441
+            Visible: =varOrderPopup
+            Width: =652
+            X: =380
+            Y: =116
+            ZIndex: =18
+
+        Icon1 As icon.Add:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Color: =RGBA(109, 49, 162, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Icon: =Icon.Cancel
+            OnSelect: =Set(varOrderPopup, false);
+            Visible: =varOrderPopup
+            X: =945
+            Y: =128
+            ZIndex: =19
+
+        Button1 As button:
+            Color: =RGBA(95, 133, 57, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(109, 49, 162, 1)
+            Font: =Font.'Lato Black'
+            FontWeight: =FontWeight.Semibold
+            Height: =91
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(12, 126, 44, 1), -20%)
+            OnSelect: |-
+                =Set(varOrderScreen, Patch('Pizza Orders', Defaults('Pizza Orders'), { Ordertime: Now()}));
+                Set(varOrderProduct, Patch('Pizza Order Products', Defaults('Pizza Order Products'), 
+                { 'Order ID':varOrderScreen, 'Pizza Product': First(LastN(GalProducts.AllItems, RandBetween(1, CountRows(GalProducts.AllItems))))}));
+                
+                Set(varOrderPopup, false);
+                Set(varFeedback, true);
+            Size: =32
+            Text: ="Confirm Order"
+            Visible: =varOrderPopup
+            Width: =393
+            X: =513
+            Y: =366
+            ZIndex: =20
+
+        Label2 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Color: =RGBA(109, 49, 162, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Lato Black'
+            Height: =100
+            Size: =26
+            Text: ="It's Pizza Time!"
+            Visible: =varOrderPopup
+            Width: =402
+            X: =504
+            Y: =172
+            ZIndex: =21
+
+    Icon2_1 As icon.BackArrow:
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Color: =ColorValue(MainColor)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(StartScreen,ScreenTransition.Cover)
+        Tooltip: ="Back to main screen"
+        X: =48
+        Y: =12
+        ZIndex: =14
+
+    Label4 As label:
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Color: =ColorValue(MainColor)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Lato Black'
+        Height: =52
+        Size: =30
+        Text: ="Choose your favorite pizza pie"
+        Width: =597
+        X: =136
+        Y: =18
+        ZIndex: =15
+
+    Icon4 As icon.Add:
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Color: =RGBA(135, 190, 82, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =44
+        Icon: =Icon.Warning
+        OnSelect: =Navigate(FeatureBombingScreen, ScreenTransition.Fade);
+        Width: =42
+        X: =1324
+        Y: =724
+        ZIndex: =16
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =21
+
+        Circle1 As circle:
+            BorderColor: =ColorValue(MainColor)
+            BorderThickness: =5
+            Fill: =ColorValue(AltColor)
+            Height: =444
+            Width: =510
+            X: =847
+            Y: =303
+            ZIndex: =2
+
+        Image2 As image:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =279
+            Image: ='happy-customer'
+            Width: =393
+            X: =905
+            Y: =422
+            ZIndex: =4
+
+        Label3 As label:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Color: =ColorValue(TextColor)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Lato Black'
+            Height: =58
+            Italic: =true
+            Size: =16
+            Text: ="All pizza's endorsed by"
+            Width: =221
+            X: =997
+            Y: =342
+            ZIndex: =13
+
+    Arrows As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =22
+
+        Icon5 As icon.ArrowDown:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Color: =ColorValue(TextColor)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            X: =1069
+            Y: =18
+            ZIndex: =7
+
+        Icon5_1 As icon.ArrowDown:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Color: =ColorValue(TextColor)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Rotation: =45
+            X: =1196
+            Y: =38
+            ZIndex: =8
+
+        Icon5_2 As icon.ArrowDown:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Color: =ColorValue(TextColor)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Rotation: =315
+            X: =945
+            Y: =38
+            ZIndex: =9
+
+        Icon5_3 As icon.ArrowDown:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Color: =ColorValue(TextColor)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Rotation: =180
+            X: =1070
+            Y: =223
+            ZIndex: =10
+
+        Icon5_4 As icon.ArrowDown:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Color: =ColorValue(TextColor)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Rotation: =225
+            X: =945
+            Y: =220
+            ZIndex: =11
+
+        Icon5_5 As icon.ArrowDown:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Color: =ColorValue(TextColor)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Rotation: =135
+            X: =1196
+            Y: =217
+            ZIndex: =12
+
+    TY As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =29
+
+        Rectangle10 As rectangle:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Fill: =RGBA(26, 26, 26, 1)
+            Height: =768
+            Visible: =varTY
+            Width: =1366
+            ZIndex: =26
+
+        Image6 As image:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            BorderThickness: =15
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =452
+            Image: ='5168c889d00179adc0b17705f8c87c06'
+            RadiusBottomLeft: =100
+            RadiusBottomRight: =100
+            RadiusTopLeft: =100
+            RadiusTopRight: =100
+            Visible: =varTY
+            Width: =431
+            X: =479
+            Y: =264
+            ZIndex: =27
+
+        Label9 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Color: =RGBA(54, 176, 75, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Courier New'
+            FontWeight: =FontWeight.Bold
+            Height: =178
+            Size: =25
+            Text: ="Thank you for your order and your feedback Ninja!"
+            Visible: =varTY
+            Width: =788
+            X: =306
+            Y: =70
+            ZIndex: =28
+
+    Feedback As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =30
+
+        Rectangle9 As rectangle:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            Fill: =RGBA(12, 126, 44, 1)
+            Height: =768
+            Visible: =varFeedback
+            Width: =1366
+            ZIndex: =22
+
+        TextInput1 As text:
+            Align: =Align.Center
+            BorderColor: =RGBA(135, 190, 82, 1)
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            FocusedBorderThickness: =4
+            Height: =154
+            HintText: ="Please tell us about your order experience"
+            HoverBorderColor: =RGBA(135, 190, 82, 1)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(53, 74, 36, 1)
+            Mode: =TextMode.MultiLine
+            Size: =13
+            Visible: =varFeedback
+            Width: =828
+            X: =291
+            Y: =172
+            ZIndex: =23
+
+        Button7 As button:
+            BorderColor: =Black
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(12, 126, 44, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(12, 126, 44, 1), -20%)
+            OnSelect: |-
+                =Patch('Pizza Order Feedbacks', Defaults('Pizza Order Feedbacks'), { Feedback: TextInput1.Text, OrderID: varOrderScreen});
+                Reset(TextInput1);
+                Set(varFeedback, false);
+                Set(varTY, true);
+            Size: =15
+            Text: ="Give feedback"
+            Visible: =varFeedback
+            Width: =280
+            X: =554
+            Y: =358
+            ZIndex: =24
+
+        Timer2 As timer:
+            Fill: =RGBA(12, 126, 44, 1)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(12, 126, 44, 1), -20%)
+            OnTimerEnd: |-
+                =Navigate(StartScreen, ScreenTransition.Fade);
+                Reset(TextInput1);
+                Set(varTY, false);
+            OnTimerStart: |
+                =Set(varTY, true);
+            Start: =varTY
+            Visible: =false
+            X: =40
+            Y: =40
+            ZIndex: =25
+
+        Image7 As image:
+            BorderColor: =RGBA(135, 190, 82, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =306
+            Image: ='happy-customer'
+            Visible: =varFeedback
+            Width: =299
+            X: =540
+            Y: =441
+            ZIndex: =29
+

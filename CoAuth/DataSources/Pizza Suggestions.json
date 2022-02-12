@@ -1,0 +1,98 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "acdc_pizzasuggestions",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "acdc_pizzasuggestion",
+    "MaxGetRowsCount": 500,
+    "Name": "Pizza Suggestions",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "acdc_name": "Name",
+      "acdc_pizzasuggestion_AsyncOperations": "System Jobs",
+      "acdc_pizzasuggestion_BulkDeleteFailures": "Bulk Delete Failures",
+      "acdc_pizzasuggestion_DuplicateBaseRecord": "Duplicate Records (acdc_pizzasuggestion_DuplicateBaseRecord)",
+      "acdc_pizzasuggestion_DuplicateMatchingRecord": "Duplicate Records (acdc_pizzasuggestion_DuplicateMatchingRecord)",
+      "acdc_pizzasuggestion_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "acdc_pizzasuggestion_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "acdc_pizzasuggestion_ProcessSession": "Process Sessions",
+      "acdc_pizzasuggestion_SyncErrors": "Sync Errors",
+      "acdc_pizzasuggestionid": "Pizza Suggestion",
+      "acdc_suggestion": "Suggestion",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Pizza Suggestions",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Pizza Suggestions (Views)",
+    "Name": "_acdc_pizzasuggestion_views",
+    "RelatedEntityName": "Pizza Suggestions",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "23221294-73c9-4973-92fb-d682a739e9ea": "Pizza Suggestion Associated View",
+      "687890c1-f1b5-488a-83fa-96453eb11108": "Pizza Suggestion Advanced Find View",
+      "98237e3e-ae64-4b71-8ce5-09d91e456acb": "Inactive Pizza Suggestions",
+      "a579bdf5-2142-46e0-a84e-f6c74278dad2": "Active Pizza Suggestions",
+      "e16f8c46-1b69-45ea-afd6-8d5edad72c55": "Pizza Suggestion Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Pizza Suggestions)",
+    "Name": "acdc_pizzasuggestion_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Pizza Suggestions"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Pizza Suggestions",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Pizza Suggestions)",
+    "Name": "acdc_pizzasuggestion_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Pizza Suggestions"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Pizza Suggestions",
+    "Type": "OptionSetInfo"
+  }
+]

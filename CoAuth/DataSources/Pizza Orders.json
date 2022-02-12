@@ -1,0 +1,107 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "acdc_pizzaorders",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "acdc_pizzaorder",
+    "MaxGetRowsCount": 500,
+    "Name": "Pizza Orders",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "acdc_customer": "Customer",
+      "acdc_deliveryaddress": "Delivery Address",
+      "acdc_deliveryaddress2": "Delivery Address 2",
+      "acdc_deliverytime": "Delivery Time (minutes)",
+      "acdc_numbercolumn": "Number column",
+      "acdc_orderid": "OrderID",
+      "acdc_ordertime": "Ordertime",
+      "acdc_pizzaorder_AsyncOperations": "System Jobs",
+      "acdc_pizzaorder_BulkDeleteFailures": "Bulk Delete Failures",
+      "acdc_pizzaorder_DuplicateBaseRecord": "Duplicate Records (acdc_pizzaorder_DuplicateBaseRecord)",
+      "acdc_pizzaorder_DuplicateMatchingRecord": "Duplicate Records (acdc_pizzaorder_DuplicateMatchingRecord)",
+      "acdc_pizzaorder_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "acdc_pizzaorder_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "acdc_pizzaorder_ProcessSession": "Process Sessions",
+      "acdc_pizzaorder_SyncErrors": "Sync Errors",
+      "acdc_PizzaOrderFeedback_OrderID_acdc_Pizz": "Pizza Order Feedbacks",
+      "acdc_pizzaorderid": "Pizza Order",
+      "acdc_PizzaOrderProduct_OrderID_acdc_Pizza": "Pizza Order Products",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Pizza Orders",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Pizza Orders (Views)",
+    "Name": "_acdc_pizzaorder_views",
+    "RelatedEntityName": "Pizza Orders",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "50ea105f-2177-48b7-aa08-bdaefc1473e3": "Inactive Pizza Orders",
+      "7a95731e-74c6-4edf-a2d8-8aa2dfd7276e": "Pizza Order Associated View",
+      "7b3a3e2d-c53b-4792-a8fd-b0c33a26aa25": "Active Pizza Orders",
+      "9986c85e-b741-465c-89ac-a65c7511fa5a": "Pizza Order Advanced Find View",
+      "d1374347-626b-4f12-8be5-3a4985c6e1a8": "Pizza Order Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Pizza Orders)",
+    "Name": "acdc_pizzaorder_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Pizza Orders"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Pizza Orders",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Pizza Orders)",
+    "Name": "acdc_pizzaorder_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "157850000": "Preparing",
+      "157850001": "Delivered",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Pizza Orders"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Pizza Orders",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "acdc_pizzaproducts",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "acdc_pizzaproduct",
+    "MaxGetRowsCount": 500,
+    "Name": "Pizza Products",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "acdc_name": "Name",
+      "acdc_PizzaOrderProduct_PizzaProduct_acdc_": "Pizza Order Products",
+      "acdc_pizzapicture": "Pizza Picture",
+      "acdc_pizzapictureid": "acdc_PizzaPictureId",
+      "acdc_pizzaproduct_AsyncOperations": "System Jobs",
+      "acdc_pizzaproduct_BulkDeleteFailures": "Bulk Delete Failures",
+      "acdc_pizzaproduct_DuplicateBaseRecord": "Duplicate Records (acdc_pizzaproduct_DuplicateBaseRecord)",
+      "acdc_pizzaproduct_DuplicateMatchingRecord": "Duplicate Records (acdc_pizzaproduct_DuplicateMatchingRecord)",
+      "acdc_pizzaproduct_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "acdc_pizzaproduct_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "acdc_pizzaproduct_ProcessSession": "Process Sessions",
+      "acdc_pizzaproduct_SyncErrors": "Sync Errors",
+      "acdc_pizzaproductid": "Pizza Product",
+      "acdc_price": "Price",
+      "acdc_productdescription": "Product Description",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Pizza Products",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Pizza Products (Views)",
+    "Name": "_acdc_pizzaproduct_views",
+    "RelatedEntityName": "Pizza Products",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2595fa9e-2bef-475b-afc9-90ea7d01baa8": "Pizza Product Lookup View",
+      "332db803-20e5-4cc7-adf3-451488532872": "Pizza Product Associated View",
+      "dae932c4-14f7-4fdd-b705-3f5ff59cf3bc": "Inactive Pizza Products",
+      "e86e7ee7-050c-4d08-a120-e9c5b8ed3c59": "Active Pizza Products",
+      "fa62eb08-f53e-4984-beb2-c2d881e77a65": "Pizza Product Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Pizza Products)",
+    "Name": "acdc_pizzaproduct_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Pizza Products"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Pizza Products",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Pizza Products)",
+    "Name": "acdc_pizzaproduct_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Pizza Products"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Pizza Products",
+    "Type": "OptionSetInfo"
+  }
+]

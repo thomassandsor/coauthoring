@@ -1,0 +1,19 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =// Default dark
+        Set(TextColor,"#ffffff");
+        Set(MainColor,"#8fd129");
+        Set(AltColor,"#507517");
+        Set(BackgroundColor,"#000000");
+        // Dark
+        Set(TextColorDark,"#ffffff");
+        Set(MainColorDark,"#8fd129");
+        Set(AltColorDark,"#507517");
+        Set(BackgroundColorDark,"#000000");
+        // Light
+        Set(TextColorLight,"#323130");
+        Set(MainColorLight,"#597A18");
+        Set(AltColorLight,"#c6d7a4");
+        Set(BackgroundColorLight,"#ffffff");
+
